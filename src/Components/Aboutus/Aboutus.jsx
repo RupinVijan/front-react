@@ -3,7 +3,6 @@ import WhatLogo from '../../files/images/what@4x.png'
 import WhyLogo from '../../files/images/why@4x (1).png'
 import WhereLogo from '../../files/images/where-2@4x.png'
 import WhoLogo from '../../files/images/who copy 2@4x.png'
-import RChandra from "../../files/old/images/rahul chandra.jpg"
 
 
 export default function Aboutus() {

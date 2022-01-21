@@ -1,0 +1,13 @@
+Date- 21-jan-2022
+
+Make a new navbar using bootstrap and update the component in every page in pages folder.
+
+
+Make a login page component is already made in component folder. Call the css accordingly from the files folder.
+
+
+css directory- /scr/files/old
+images directory- src/files/images
+
+
+login page route should be configured in routes folder.

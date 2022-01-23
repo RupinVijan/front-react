@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap");
+
+.outer-nav {
+  display: flex;
+  width: 100%;
+  padding: 9px 1rem;
+}
+
+.nav-logo,
+.nav-links {
+  display: flex;
+  width: 100%;
+}
+
+.nav-links {
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-logo-img {
+  height: 3rem;
+  cursor:pointer;
+}
+
+.nav-tag,
+.nav-tag1 {
+  display: flex;
+  width: 100%;
+  font-family: "Comfortaa", cursive;
+  font-size: 1.1rem;
+  font-weight: 900;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-tag1 {
+  justify-content: flex-start;
+  padding-left: 1rem;
+}
+
+.avatar-div {
+  width: 200px;
+  height: 2rem;
+  background-color: rgb(252, 206, 47);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -0.5rem;
+}
+
+.dropdown-toggle::after {
+  margin-top: 0.5rem;
+}
+
+.drops {
+  background-color: rgb(252, 206, 47);
+}
+
+.responsive-nav {
+  background-color: rgb(252, 206, 47);
+  position: fixed;
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  z-index: 10;
+}
+
+@media screen and (max-width: 860px) {
+  .nav-tag,
+  .avatar-div {
+    display: none;
+  }
+
+  .outer-nav {
+    background-color: rgb(252, 206, 47) !important;
+  }
+}
+
+@media screen and (min-width: 859px) {
+  .responsive-nav,
+  .menu-button {
+    display: none;
+    font-size: 1rem;
+  }
+}

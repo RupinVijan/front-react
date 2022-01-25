@@ -4,6 +4,7 @@ import "../files/old/login,signup/login.css";
 import "../files/old/login,signup/logsign.css";
 import logoImage from "../files/images/login pagee.png";
 import Navbar from "../Components/Navbar/Navbar";
+import Swal from "sweetalert2";
 
 const Signup = () => {
   const [data, setData] = useState({
@@ -11,15 +12,38 @@ const Signup = () => {
     email: "",
     password: "",
   });
+  const [AuthError, setAuthError] = useState("");
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log(data);
+    // console.log(data);
     setData({
       name: "",
       email: "",
       password: "",
     });
+    const res = await fetch(
+      "https://monkhood-api.herokuapp.com/api/loginForm/signup",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      }
+    );
+    const resdata = await res.json();
+    if(!resdata.error){
+      Swal.fire({
+        title: "Thank You!",
+        text: "Your response has been recorded successfully! Our team will be contacting you soon.",
+        icon: "success",
+      });
+      navigate("/login");
+    }
+    else{
+      setAuthError(resdata.error)
+    }
   };
   return (
     <div>
@@ -59,6 +83,7 @@ const Signup = () => {
               value={data.password}
               onChange={(e) => setData({ ...data, password: e.target.value })}
             />
+            {AuthError}
             <button className="btn" onClick={handleSubmit}>
               Submit
             </button>
